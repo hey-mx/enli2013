@@ -10,10 +10,12 @@ TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
+    ('Juan Carlos Juarez', 'isc.jcjl@me.com'),
 )
 
 MANAGERS = ADMINS
 
+#export DATABASE_URL="mysql://user:passwd@127.0.0.1/database"
 DATABASES = {
     'default': dj_database_url.config()
 }
@@ -80,6 +82,7 @@ STATICFILES_FINDERS = (
 )
 
 # Make this unique, and don't share it with anybody.
+#export DJANGO_SECRET_KEY="the_secret_key"
 SECRET_KEY = os.environ['DJANGO_SECRET_KEY']
 
 # List of callables that know how to import templates from various sources.
@@ -105,7 +108,7 @@ ROOT_URLCONF = 'enli2013.urls'
 WSGI_APPLICATION = 'enli2013.wsgi.application'
 
 TEMPLATE_DIRS = (
-    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
+    # Put strings here, like "/home/html/django_templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
     #os.path.join(PROJECT_PATH, 'templates')
