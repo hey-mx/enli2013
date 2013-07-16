@@ -2,8 +2,9 @@
 import dj_database_url
 import os
 
+print os.path.dirname(__file__)
 PROJECT_PATH = os.path.abspath(os.path.join(
-    os.path.abspath(__file__), os.pardir))
+    os.path.dirname(__file__), os.pardir))
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -71,6 +72,7 @@ STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+    os.path.join(PROJECT_PATH, 'public', 'static'),
 )
 
 # List of finder classes that know how to find static files in
@@ -78,7 +80,7 @@ STATICFILES_DIRS = (
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-    'django.contrib.staticfiles.finders.DefaultStorageFinder',
+    #'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
 
 # Make this unique, and don't share it with anybody.
@@ -112,6 +114,7 @@ TEMPLATE_DIRS = (
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
     #os.path.join(PROJECT_PATH, 'templates')
+    os.path.join(PROJECT_PATH, 'public', 'templates'),
 )
 
 INSTALLED_APPS = (
@@ -125,6 +128,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
+    'public',
     'south',
 )
 
